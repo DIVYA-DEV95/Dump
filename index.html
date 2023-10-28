@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Define document metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link to Font Awesome icons stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link to a custom stylesheet (style.css) -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Set a shortcut icon (favicon) -->
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    
+    <!-- Set the title of the webpage -->
+    <title>Excalidraw</title>
+</head>
+<body>
+    <!-- Main content container -->
+    <main id="main">
+        <!-- Navigation bar -->
+        <div class="nav">
+            <!-- Menu button -->
+            <div class="menu">
+                <button><i class="fa-solid fa-bars"></i></button>
+            </div>
+
+            <!-- Tool selection box -->
+            <div class="tool-box">
+                <div class="tool-container">
+                    <!-- Various drawing tools -->
+                    <button class="tool" id="lock"><i class="fa-solid fa-unlock-keyhole"></i></button>
+                    <button class="tool" id="hand"><i id="grab" class="fa-regular fa-hand"></i></button>
+                    <!-- (Other tool buttons are similarly structured) -->
+
+                    <!-- Horizontal divider -->
+                    <div class="hr_divider"></div>
+
+                    <!-- Additional tools (e.g., eraser, etc.) -->
+                    <!-- (Other tool buttons are similarly structured) -->
+                </div>
+            </div>
+
+            <!-- User and library buttons -->
+            <div class="btn">
+                <button class="user"><i class="fa-regular fa-user"></i></button>
+                <button class="lib"><i class="fa-solid fa-book"></i> &nbsp;Library</button>
+            </div>
+        </div>
+
+        <!-- Color palette section -->
+        <div class="color-palette">
+            <!-- Stroke color options -->
+            <div class="stroke">
+                <label class="title">Stroke</label>
+                <ul class="options">
+                    <!-- List of stroke color options (empty elements) -->
+                    <li class="option"></li>
+                    <!-- (Other stroke color options are similarly structured) -->
+                    <li class="hr_divider"></li>
+                    <!-- Color picker input for custom stroke color -->
+                    <li class="option">
+                        <input type="color" id="color-picker" value="#000000">
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Background color options -->
+            <div class="bg-color">
+                <label class "title">Background</label>
+                <ul class="options">
+                    <!-- List of background color options (empty elements) -->
+                    <li class="option"></li>
+                    <!-- (Other background color options are similarly structured) -->
+                    <li class="hr_divider"></li>
+                    <!-- Color picker input for custom background color -->
+                    <li class="option">
+                        <input type="color" id="bgColor-picker" value="#000">
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Fill color checkbox -->
+            <div class="fill-color">
+                <input type="checkbox" id="fill-color">
+                <label for="fill-color">Fill Color</label>
+            </div>
+
+            <!-- Stroke width options -->
+            <div class="stroke-width">
+                <label class="title">Stroke Width</label>
+                <div class="stroke-btn">
+                    <!-- Buttons for different stroke width options -->
+                    <button class="width-btn active" id="small"><i class="fa-solid fa-minus" style="font-size: 10px;"></i></button>
+                    <!-- (Other stroke width buttons are similarly structured) -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer section with zoom, undo/redo, and other controls -->
+        <div id="foot">
+            <div class="foot-left">
+                <!-- Zoom controls -->
+                <div class="zoom-div">
+                    <div id="zoom-out" class="decrease"><i class="fa-solid fa-minus"></i></div>
+                    <div class="percentage">100%</div>
+                    <div id="zoom-in" class="increase"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <!-- Undo and redo buttons -->
+                <div class="undo-redo-div">
+                    <div id="undo" class="undo"><i class="fa-solid fa-rotate-left"></i></div>
+                    <div id="redo" class="redo"><i class="fa-solid fa-rotate-right"></i></div>
+                </div>
+            </div>
+            <div class="foot-right">
+                <!-- Encryption and help icons -->
+                <div class="encript">
+                    <i class="fa-solid fa-shield-heart" style="color: #6965db; cursor: pointer"></i>
+                </div>
+                <div class="help">
+                    <i class="fa-regular fa-circle-question"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- The canvas for drawing -->
+        <canvas id="canvas"></canvas>
+    </main>
+
+    <!-- Include JavaScript files for functionality -->
+    <script src="./script.js"></script>
+    <script src="./undo&redo.js"></script>
+    <script src="./eraser.js"></script>
+</body>
+</html>
